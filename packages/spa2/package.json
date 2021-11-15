@@ -1,11 +1,11 @@
 {
-  "name": "spa1",
+  "name": "spa2",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "serve dist -p 5001",
+    "start": "serve dist -p 5002",
     "build": "webpack --mode production",
-    "dev": "concurrently \"webpack --watch\" \"serve dist -p 5001\""
+    "dev": "webpack --watch & serve dist -p 5002"
   },
   "dependencies": {
     "react": "^16.13.1",
@@ -15,9 +15,7 @@
     "@babel/core": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
-    "concurrently": "^5.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "serve": "^11.3.0",
     "webpack": "^5.64.0",
     "webpack-cli": "^3.3.11"
   }

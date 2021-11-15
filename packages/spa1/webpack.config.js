@@ -6,6 +6,9 @@ const mode = process.env.NODE_ENV || 'production';
 module.exports = {
   mode,
   entry: './src/index',
+  output: {
+    publicPath: 'auto', // New
+  },
   devtool: 'source-map',
   optimization: {
     minimize: mode === 'production',
@@ -26,6 +29,19 @@ module.exports = {
   },
 
   plugins: [
+    // New
+    new ModuleFederationPlugin({
+      name: 'spa1',
+      library: { type: 'var', name: 'spa1' },
+      filename: 'remoteEntry.js',
+      exposes: {
+        './SayHelloFromSPA1': './src/app',
+      },
+      remotes: {
+        'spa2': 'spa2',
+      },
+      shared: ['react', 'react-dom'],
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),

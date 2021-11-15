@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "wsrun": "^5.2.0"
+  },
+  "dependencies": {
+    "webpack": "^5.64.0"
   }
 }
