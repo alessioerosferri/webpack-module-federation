@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "serve dist -p 3002",
+    "start": "serve dist -p 5002",
     "build": "webpack --mode production",
-    "dev": "concurrently \"webpack --watch\" \"serve dist -p 3002\""
+    "dev": "concurrently \"webpack --watch\" \"serve dist -p 5002\""
   },
   "dependencies": {
     "react": "^16.13.1",
