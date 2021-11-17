@@ -22,13 +22,14 @@ const Test = ()=>{
 
 
 export default function SayHelloFromSPA1() {
+  const [myState, setMyState] = React.useState('')
   return (
     <>
-      <h1>This is a navbar from SPA1</h1>
+      <h1>This is a navbar from SPA1 with state: {myState}</h1>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={NavBar} />
-          <Route path="/elementInSPA2" component={SayHelloFromSPA2} />
+          <Route path="/elementInSPA2" component={()=><SayHelloFromSPA2 updateState={setMyState}/>} />
           <Route path="/elementInSPA3" component={Test} />
         </Switch>
 
