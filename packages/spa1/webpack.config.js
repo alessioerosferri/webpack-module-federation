@@ -39,6 +39,7 @@ module.exports = {
       },
       remotes: {
         'spa2': 'spa2',
+        'mdmfprofile': 'mdmfprofile',
       },
       shared: ['react', 'react-dom'],
     }),
